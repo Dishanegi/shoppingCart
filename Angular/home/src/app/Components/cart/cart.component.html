@@ -1,0 +1,55 @@
+
+<br>
+<div *ngIf="carts.length ===0" class="alert alert -info">No items Added</div> 
+
+
+
+<h1>Cart</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price/Item</th>
+        <th scope="col">Price Total</th>
+      
+      </tr>
+    </thead>
+    <tbody *ngIf="carts.length > 0">
+        <tr *ngFor="let cart of carts">
+        <td> {{cart.title}}</td>
+        <td> {{cart.quantity}}</td>
+        <td>{{cart.price}}</td>
+        <td> {{(cart.price )* (cart.quantity) | currency:'INR'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3> <strong>Total </strong></h3> {{1600 | currency:'INR'}}
+
+<br>
+
+
+<br>
+<br>
+
+<h3>Pay via</h3>
+<br>
+<div class="col-md-6">
+<ngx-paypal [config]="payPalConfig"></ngx-paypal>
+</div>
+
+<br>
+<br>
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br>
+<br><br>
+<br><br>
+<br><br>
+<br><br><br>
+<br><br>
+<br><br>
+<br><br>

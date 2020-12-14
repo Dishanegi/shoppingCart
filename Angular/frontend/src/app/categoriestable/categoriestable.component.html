@@ -1,0 +1,27 @@
+
+
+<h1>Category Table</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Main Category</th>
+        <th scope="col">Title</th>
+        <th scope="col">Slug</th>
+      
+      
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories">
+          <td>{{category.mainCategory}}</td>
+        <td> {{category.title}}</td>
+        <td> {{category.slug}}</td>
+       
+    
+    <td (click)="deleteCategory(category._id)" ><a class="confirmDeletion" href="/allCategories">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br>

@@ -1,0 +1,51 @@
+<div id="sidebar-wrapper">
+  <ul id="sidebar_menu" class="sidebar-nav">
+       <li class="sidebar-brand"><a id="menu-toggle" href="#">Categories<span id="main_icon" class="glyphicon glyphicon-align-justify"></span></a></li>
+  </ul>
+    <ul class="sidebar-nav" id="sidebar">     
+      <li><a href="http://localhost:4200/categories/Women's%20Fashiom/product">Women's Fashon<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+      <li><a href="http://localhost:4200/categories/Men's%20Fashion/product">Men's Fashion<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+      <li><a href="http://localhost:4200/categories/Fruits/product">Fruits<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
+    </ul>
+  </div>
+      <br>
+      <br>
+  <!-- Page content -->
+  <div id="page-content-wrapper">
+    <!-- Keep all page content within the page-content inset div! -->
+    <div class="page-content inset">
+      <div class="row">
+    <!----> 
+                 <div class="col-3 col-md-4 " *ngFor="let product of products">
+                    <div class="product-grid2" >
+                       <div class="product-image2"> <a href="#"> <img class="pic-1" src="{{product.image}} " > <img class="pic-2" src="{{product.image2}}"> </a>
+                            <ul class="social">
+                                <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                       
+                                 <li><a href="/Cart/5fcb2e13f138a4364cdaaf19/{{product._id}}/{{product.title}}/{{product.price}}"  data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                       
+          
+                        
+                               </ul>
+                        </div>
+                <div class="product-content">
+                    <h2 class="title"><a href="#">{{product.title}}</a></h2> <span class="price">{{product.price | currency:'INR'}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <td> 
+    <td> 
+    <td> 
+    <td>
+</div>
+<hr>
+  
+             
+         
+                  
+           
+        </div>
+      </div>
+      
+    </div>

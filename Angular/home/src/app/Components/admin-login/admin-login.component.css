@@ -1,0 +1,16 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+label{
+    font-size: 20px;
+}
+
+body {
+    padding-top: 56px;
+    
+  }
+  .form-group{
+      padding:10px;
+      margin:10px;
+  }
+ .but{
+         margin:20px;
+ }

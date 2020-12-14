@@ -1,0 +1,80 @@
+
+
+<div class="container">
+  <h1>Products</h1>
+    <form #userForm="ngForm" (ngSubmit)="addProduct()"  >
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="name" [(ngModel)]="title"  >
+          <small [class.d-none]="name.valid || name.untouched">title Required</small>
+          </div>
+          <div class="form-group">
+            <label>Slug</label>
+            <input type="text" required #Slug="ngModel" [class.is-invalid]="Slug.invalid && Slug.touched" class="form-control" name="slug" [(ngModel)]="slug"  >
+          <small [class.d-none]="Slug.valid || Slug.untouched">slug Required</small>
+          </div>
+          <div class="form-group">
+            <label>desc</label>
+            <input type="text" required #Desc="ngModel" [class.is-invalid]="Desc.invalid && Desc.touched" class="form-control" name="desc" [(ngModel)]="desc"  >
+          <small [class.d-none]="Desc.valid || Desc.untouched">desc Required</small>
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <input type="text" required #Category="ngModel" [class.is-invalid]="Category.invalid && Category.touched" class="form-control" name="category" [(ngModel)]="category"  >
+          <small [class.d-none]="Category.valid || Category.untouched">category Required</small>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="text" required #Price="ngModel" [class.is-invalid]="Price.invalid && Price.touched" class="form-control" name="price" [(ngModel)]="price"  >
+          <small [class.d-none]="Price.valid || Price.untouched">price Required</small>
+          </div>
+          <div class="form-group">
+            <label>Image 1</label>
+            <input type="text" required #Image="ngModel" [class.is-invalid]="Image.invalid && Image.touched" class="form-control" name="image" [(ngModel)]="image"  >
+            <!--<button type="button" (click)="onUpload()">Upload</button> !-->
+          <small [class.d-none]="Image.valid || Image.untouched">image Required</small>
+          </div>
+          <div class="form-group">
+            <label>Image 2</label>
+            <input type="text" required #Image2="ngModel" [class.is-invalid]="Image2.invalid && Image2.touched" class="form-control" name="image2" [(ngModel)]="image2"  >
+            <!--<button type="button" (click)="onUpload()">Upload</button> !-->
+          <small [class.d-none]="Image2.valid || Image2.untouched">image Required</small>
+          </div>
+    <button class="btn btn-primary" [disabled]="!userForm.valid" type="submit">Submit</button>
+    </form>
+</div>
+<br>
+
+<br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+<!--<div class="container">
+    <div *ngFor="let product of products">
+        <div class="col-md-3">
+            {{product.title}}
+        </div>
+
+        <div class="col-md-3">
+            {{product.slug}}
+        </div>
+
+        <div class="col-md-3">
+            {{product.desc}}
+        </div>
+
+        <div class="col-md-3">
+            {{product.category}}
+        </div>
+
+        <div class="col-md-3">
+            {{product.price}}
+        </div>
+        <div class="col-md-3">
+            {{product.image}}
+        </div>
+        <div class="col-md-3">
+           <input type="button" (click)="deleteProduct(product._id)" value="Delete" class="btn btn-danger">
+
+        </div>
+
+
+      </div>!-->

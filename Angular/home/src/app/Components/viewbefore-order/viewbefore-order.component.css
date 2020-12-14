@@ -1,0 +1,22 @@
+.fluid{
+    display: grid;
+    grid-gap:10px;
+    background-color: var(--primary);
+    background-image: url('https://cdn2.vectorstock.com/i/1000x1000/26/31/shopping-cart-full-shopping-bags-with-a-sale-vector-742631.jpg');
+    background-size: cover;
+    min-height: 1000px;
+    background-position: center;
+ 
+   
+}
+ h1{
+    
+    color: rgb(0, 0, 0);
+    text-align: center;
+  
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    opacity: 1;
+ 
+}
+

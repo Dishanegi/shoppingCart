@@ -1,0 +1,14 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+label{
+    font-size: 20px;
+}
+.div-container{
+    margin:0 px;
+    height: 210px;
+    padding: 0;
+
+   
+}
+body {
+    padding-top: 56px;
+}

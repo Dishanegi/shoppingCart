@@ -1,0 +1,119 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Shopholic</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      <br>
+        
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!_authService.UserloggedIn()" routerLink="/users/login" routerLinkActive=active >Login</a>
+        </li>
+      <li class="nav-item">
+      <a class="nav-link" *ngIf="!_adminService.AdminloggedIn()"  routerLinkActive=active routerLink="/admin/login" >AdminLogin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  *ngIf=" _authService.UserloggedIn() " routerLinkActive=active (click)="_authService.Userlogout()" >User Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  *ngIf=" _adminService.AdminloggedIn() " routerLinkActive=active (click)="_adminService.Adminlogout()" >Admin Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"    href="http://localhost:4200/Cart/5fcb2e13f138a4364cdaaf19/products"  >MyCart</a>
+      
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!--<h1>Main Category Table</h1>
+<table class="table">
+  <thead>
+    <tr *ngFor="let mainCategory of mainCategories">
+      <th scope="col">{{mainCategory.title}}</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let category of categories">
+      <td> {{category.title}}</td>
+     
+    </tr>
+  </tbody>
+</table>-->
+
+
+
+
+
+
+
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/users">Shopping</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      <br>
+          <li class="nav-item">
+          <a class="nav-link" *ngIf="!_authService.UserloggedIn()"  routerLink="/users/register" routerLinkActive=active>Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!_authService.UserloggedIn()" routerLink="/users/login" routerLinkActive=active >Login</a>
+        </li>
+      <li class="nav-item">
+      <a class="nav-link" *ngIf="!_adminService.AdminloggedIn()"  routerLinkActive=active routerLink="/admin/login" >AdminLogin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  *ngIf=" _authService.UserloggedIn() " routerLinkActive=active (click)="_authService.Userlogout()" >User Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  *ngIf=" _adminService.AdminloggedIn() " routerLinkActive=active (click)="_adminService.Adminlogout()" >Admin Logout</a>
+    </li>
+      </ul>
+    </div>
+  </div>
+</nav>-->

@@ -1,0 +1,44 @@
+HTML Pages for the website:-
+##NAv bar##
+1. Home
+ (Categories)
+ - Electronics
+   * Mobiles
+   * Computer
+   * Home appliances
+ - BodyCare
+ - clothings
+ - Baby
+2. Login/Register
+ - Register (forms)
+  * valid email id and password
+ - Login (form)
+  * enter the valid email id and password authenticate the user
+3. Search bar (Search products by category redirect to the specific page) 
+ - can type and enter specific item needeed
+4. Cart
+  - redirect the specific user to the login page (authenticate the user)
+  - display the all the orders which that user has ordered
+
+##Body##
+ -Some of the Images of the items and by clicking them redirecting to specific page 
+##Footer##
+- Get to know about us
+  * About us
+  * Careers
+- Connect with us
+ * Instagram
+ * Twitter
+ * FaceBook
+- Make money with us
+ * Sell
+ * Advertise your products
+- Help
+
+Copyright 
+  
+
+  
+  
+ 
+ 
