@@ -24,6 +24,9 @@ import { ProductsService } from './services/products.service';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { UserProfileComponent } from './Components/user-profile/user-profile.component';
+import { DemocartComponent } from './Components/democart/democart.component';
+import { WebService } from './services/web.service';
+import { SaleComponent } from './Components/sale/sale.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +43,8 @@ import { UserProfileComponent } from './Components/user-profile/user-profile.com
     CartComponent,
     ViewbeforeOrderComponent,
     UserProfileComponent,
+    DemocartComponent,
+    SaleComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,7 @@ import { UserProfileComponent } from './Components/user-profile/user-profile.com
     FlashMessagesModule.forRoot()
   
   ],
-  providers: [AuthService,AdminService,ProductsService
+  providers: [AuthService,AdminService,ProductsService,WebService
  ],
   bootstrap: [AppComponent]
 })

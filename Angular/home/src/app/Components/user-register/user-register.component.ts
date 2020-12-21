@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import  User  from 'src/app/models/user';
-import { FlashMessagesService} from 'angular2-flash-messages';
+
 @Component({
   selector: 'app-user-register',
   templateUrl: './user-register.component.html',
@@ -11,7 +11,7 @@ export class UserRegisterComponent implements OnInit {
 
  registerUserData={};
     constructor(private _auth: AuthService,
-      private flashMsg:FlashMessagesService) { }
+      ) { }
   
     ngOnInit(): void {
     }
@@ -27,8 +27,8 @@ export class UserRegisterComponent implements OnInit {
       localStorage.setItem('token',res.token)
     },
      err => {
-       this.flashMsg.show('Please check the email & password entered once again', {cssClass:'alert-danger',timeout:3000});
-       console.log(err)}
+       
+       console.log(err);}
     )
   }
 }

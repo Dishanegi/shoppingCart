@@ -1,19 +1,35 @@
+
 <div class="fluid">
 
 <div class="showcase2">
 
 
 <br>
- <form #userForm="ngForm" (ngSubmit)=" addTOCart(cardInput.quantity)">
+
+
+
+
+ <form #userForm="ngForm" (ngSubmit)=" addTOCart(cartInput.value)">
+
+
+
+  
   <div class="form-group">
-   <label><h1>How much quantity needed?</h1></label>
-   <input type="number " #cardInput name="quantity" class="form-control">
+    <flash-messages></flash-messages>
+   <label><h1> Quantity needed?</h1></label><br>
+   <input type="number" required #cartInput name="name" class="form-control"><br>
+   <button [disabled]="!_authService.UserloggedIn()" class="btn btn-primary" type="submit"> Submit</button>
+   <div *ngIf="!_authService.UserloggedIn()" class="my-notify-warning"> Item cannot be added to the cart. Please login </div>
+
+ 
+
+<br>
+ </div>
+  </form>
    
   </div>
 <div>
-  <button type="submit" class="btn btn-primary " > Submit</button>
-</div>
- </form>
+
   
 
 </div>

@@ -5,7 +5,7 @@ import Product   from 'src/app/models/product';
 import MainCategory from 'src/app/models/mainCategory';
 import { ActivatedRoute, Router,Params } from '@angular/router';
 import { MessengerService } from 'src/app/services/messenger.service';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-mainwatch',
   templateUrl: './mainwatch.component.html',
@@ -21,7 +21,8 @@ export class MainwatchComponent implements OnInit {
    
   constructor(private _productService:ProductsService,
     private _route:ActivatedRoute,
-    private _router:Router,private msg:MessengerService) { }
+    private _router:Router,private msg:MessengerService,
+   private _authService:AuthService) { }
 
     products : Product[];
     product:Product;

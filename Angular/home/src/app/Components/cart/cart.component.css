@@ -1,5 +1,92 @@
-i {
-    color: #FFD700;
-    padding: 0 5px;
-  }
+.full{
+  display: grid;
+  grid-gap:20px;
+  background-color: var(--primary);
+  background-image: url('https://cnet3.cbsistatic.com/img/EpvDk3LwTQ6YsTVx081P78y7ZZA=/1200x675/2018/10/10/30c923c8-4e64-449d-b8ef-9a78b2011ae5/gettyimages-769800477.jpg');
+  background-size: cover;
+  min-height: 900px;
+  background-position: center;
+  
+}
 
+.text {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+ 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:transparent;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 20px 108px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+h1{
+  font-size: 38px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+}
+
+
+.container{
+  height: 800px;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+
+
+}
+
+
+
+
+
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#customers th{
+  border: 1px solid rgb(255, 229, 229);
+  padding: 8px;
+  font-size: 22px;
+}
+#customers td {
+  border: 1px solid rgb(255, 229, 229);
+  padding: 8px;
+  font-size: 18px;
+
+}
+
+#customers tr:nth-child{background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #292329;
+  color: white;
+}
+.but{
+  position: absolute;
+  top: 68.4%;
+  left: 49.5%;
+ 
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:white;
+  color: rgb(180, 92, 92);
+  font-size: 16px;
+  padding: 20px 108px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

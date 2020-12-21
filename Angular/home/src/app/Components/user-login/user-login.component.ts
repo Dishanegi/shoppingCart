@@ -34,16 +34,16 @@ export class UserLoginComponent implements OnInit {
          uid:res.uid
        }
        this._authService.uid=res.uid;
-       console.log(res);
+       console.log(res.uid);
         localStorage.setItem('token',JSON.stringify(tokenobj));
         this._router.navigate(['/']);  
       },
       err =>{
 
       console.log(err);
-      this.flashMsg.show('Please check the details entered once again', {cssClass:'alert-danger',timeout:3000});
+      this.flashMsg.show('Either email is wrong or password', {cssClass:'alert-danger',timeout:3000});
 
-      alert('Not Authorised User');
+      
       }
      
     )

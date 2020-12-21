@@ -25,6 +25,7 @@ export class ProductTableComponent implements OnInit {
     image2:string;
     
   ngOnInit(): void {
+      
          
     this._route.params.subscribe((params :Params)=>
       {

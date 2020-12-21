@@ -9,21 +9,28 @@ import { ActivatedRoute, Router,Params } from '@angular/router';
   styleUrls: ['./user-view.component.css']
 })
 export class UserViewComponent implements OnInit {
-categories: Category[] = [];
+
 products: Product[]=[];
+
+products : Product[];
+product:Product;
+_id:string;
+title:string;
+price:number;
+image:string;
+image2:string;
   constructor(private _productService:ProductsService,
     private _route:ActivatedRoute,
     private _router:Router) { }
 
   ngOnInit() {
-    this._productService.getCategories()
-    .subscribe((categories: Category[]) =>  this.categories=categories);
+   
     
   this._route.params.subscribe((params :Params)=>
     {
-      const title=params.title;
-      if(!title) return;
-      this._productService.getCategorywiseProducts(title)
+      const id=params.id;
+      if(!id) return;
+      this._productService.getSpecificProductDetails(id)
       .subscribe((products:Product[])=> this.products=products);
     })
   }

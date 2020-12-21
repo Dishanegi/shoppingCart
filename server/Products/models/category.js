@@ -5,12 +5,12 @@ var mongoose = require('mongoose');
 var CategorySchema = mongoose.Schema({
     mainCategory:{
         type:String,
-        required:true
+        
 
     },
     title: {
         type: String,
-        required: true
+        
     },
     slug: {
         type: String

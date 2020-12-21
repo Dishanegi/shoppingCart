@@ -2,13 +2,281 @@
 label{
     font-size: 20px;
 }
-.div-container{
-    margin:0 px;
-    height: 210px;
-    padding: 0;
+@import "~bootstrap/dist/css/bootstrap.css";
 
-   
+.navbar-dark .navbar-brand {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
 }
-body {
-    padding-top: 56px;
+
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-toggler {
+  background: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.nav-link {
+  padding: .2rem 1rem;
+}
+
+.nav-link.active,.nav-link:focus{
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-toggler {
+  padding: 1px 5px;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: rgb(255, 255, 255);
+}
+
+
+/* General Styles*/
+
+
+
+/* ignore the code below */
+
+
+
+
+.row h1{
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+  
+}
+
+#wrapper {
+    padding-left: 50px;
+    transition: all .4s ease 0s;
+    height: 100%
+}
+
+#sidebar-wrapper {
+    margin-left: -150px;
+    margin-top: 15px;
+    left: 250px;
+    width: 300px;
+    background: #f8c930;
+    position: fixed;
+    height: 100%;
+    z-index: 10000;
+    transition: all .4s ease 0s;
+}
+
+.sidebar-nav {
+    display: block;
+    float: left;
+    width: 250px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#page-content-wrapper {
+    padding-left: 50px;
+    margin-left: 250px;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+    align-items: center;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+#sidebar_menu li a, .sidebar-nav li a {
+    color: rgb(0, 0, 0);
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 300px;
+    background:  #f8c930;
+    border-top: 1px solid #f8c930;
+    border-bottom: 1px solid #ebdc0e;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    -ms-transition: background .5s;
+    transition: background .5s;
+}
+.sidebar_name {
+    padding-top: 25px;
+    color: rgb(70, 68, 62);
+    opacity: .7;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.sidebar-nav li a {
+  color: #413b3b;
+  display: block;
+  text-decoration: none;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.sidebar-nav li a:hover {
+  color: rgb(255, 255, 255);
+  background: rgba(233, 40, 40, 0.2);
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 35px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #754949;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: rgb(231, 201, 27);
+  background: none;
+}
+
+#main_icon
+{
+    float:right;
+   padding-right: 65px;
+   padding-top:20px;
+}
+.sub_icon
+{
+    float:right;
+   padding-right: 65px;
+   padding-top:10px;
+}
+.content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  
+  display: inline-block;
+}
+
+@media (max-width:767px) {
+    #wrapper {
+    padding-left: 70px;
+    transition: all .4s ease 0s;
+}
+#sidebar-wrapper {
+    left: 70px;
+}
+#wrapper.active {
+    padding-left: 150px;
+}
+#wrapper.active #sidebar-wrapper {
+    left: 150px;
+    width: 150px;
+    transition: all .4s ease 0s;
+}
+}
+
+.showcase{
+
+  background-image: url('https://www.irwin-insolvency.co.uk/wp-content/uploads/2019/09/Admin-1024x623.jpeg');
+  background-size: cover;
+  min-height: 1200px;
+  background-position: center;
+  width:2000px;
+position: absolute;
+top: 50%;
+left: 55.5%;
+
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+padding: 20px 110px;
+text-decoration: none;
+border: none;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.row1{
+    height: 450px;
+    width:450px;
+    position: absolute;
+top: 50%;
+left: 52.5%;
+
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+padding: 60px 120px;
+border: none;
+background-color:rgba(236, 222, 222, 0.795);
+border-radius:10px ;
+}
+
+.inner{
+width: 220px;
 }

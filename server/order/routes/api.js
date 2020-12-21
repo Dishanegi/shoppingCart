@@ -1,36 +1,66 @@
+
+
 const express=require('express');
 const router=express.Router();
 const Order=require('../models/order');
 const mongoose= require('mongoose');
 const axios=require ('axios');
+const nodemailer=require('nodemailer');
+
+
+
 //Create a new order
 
-router.post("/orders",(req,res)=>
-{
-   var newOrder={
-    ProductId : mongoose.Types.ObjectId(req.body.ProductId),
-    UserId : mongoose.Types.ObjectId(req.body.UserId),
-    Quantity:req.body.Quantity,
-    initialDate:req.body.initialDate,
-    deliveryDate:req.body.deliveryDate
+router.post('/orders',(req,res)=>{
 
+    console.log("Request came");
+    let order=req.body;
+    sendMail(order,info=>
+        {
+            console.log(`The mail send and the id is `)
+            res.send(info);
+        
+     });
+     Order.create(req.body).then(function(list)
+     {
+         res.send(list);
+     });
 
-   }
-
-
-   var order =new Order(newOrder)
-   order.save().then(()=>
-   {
-   // res.send("Orders created with success");
-    res.send(order);
-   }).catch((err)=>
-   {
-       if(err)
-       {
-           throw err;
-       }
-   })
 });
+
+async function sendMail(user,callback)
+{
+    // create reusable transporter object using the default smtp transport
+    let transporter=nodemailer.createTransport({
+        host:"smtp.gmail.com",
+        port:587,
+        secure:false,
+        auth:{
+            user:"shopholicsupersale@gmail.com",
+            pass:"Di$haNegi@1998"
+
+        }
+    });
+
+
+let mailOptions={
+    from:"shopholicsupersale@gmail.com",
+    to:user.email,
+    subject:"Thankyou for shopping with Shopholic",
+    html:`<h1> Hi ${user.name}</h1><br>
+    <h4>You will recive your order within 7 days and it would be delivered to ${user.address}</h4><br>
+    <h5>We hope you like our services. Have a good day</h5>`
+}
+
+//send mail with defined transport object
+let info=await transporter.sendMail(mailOptions);
+callback(info);
+
+
+}
+
+
+
 
 
 router.get("/orders",(req,res)=>{

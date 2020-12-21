@@ -1,55 +1,53 @@
-
 <br>
 <div *ngIf="carts.length ===0" class="alert alert -info">No items Added</div> 
 
+<div class="full">
+  <div class="text">
+  <h1>MyCart</h1>
+</div>
+<div class="container">
+<table id="customers">
 
+  <thead>
+  <tr>
 
-<h1>Cart</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Price/Item</th>
-        <th scope="col">Price Total</th>
-      
-      </tr>
-    </thead>
-    <tbody *ngIf="carts.length > 0">
-        <tr *ngFor="let cart of carts">
-        <td> {{cart.title}}</td>
-        <td> {{cart.quantity}}</td>
-        <td>{{cart.price}}</td>
-        <td> {{(cart.price )* (cart.quantity) | currency:'INR'}}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3> <strong>Total </strong></h3> {{1600 | currency:'INR'}}
-
+    <th scope="col">Title</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Price/Item</th>
+    <th scope="col">Price Total</th>
+    <th scope="col">Action</th>
+  
+  </tr>
+  </thead>
+  <tbody *ngIf="carts.length > 0">
+    <tr *ngFor="let cart of carts">
+    <td> {{cart.title}}</td>
+    <td> {{cart.quantity}}</td>
+    <td>{{cart.price}}</td>
+    <td> {{(cart.price )* (cart.quantity) | currency:'INR'}}</td>
+    
+   
+   
+    <td (click)="deleteProductsFromCart(cart._id)"><a class="confirmDeletion" href="/Cart/5fcb2e13f138a4364cdaaf19/products">Delete</a></td>
+    <flash-messages></flash-messages>
+  </tr>
+</tbody>
+</table>
 <br>
-
-
-<br>
-<br>
-
-<h3>Pay via</h3>
-<br>
-<div class="col-md-6">
-<ngx-paypal [config]="payPalConfig"></ngx-paypal>
+<button type="button" class="but"><a href="http://localhost:4200/Cart/payment" >Checkout</a></button>
 </div>
 
-<br>
-<br>
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br>
-<br><br>
-<br><br>
-<br><br>
-<br><br><br>
-<br><br>
-<br><br>
-<br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,26 +1,31 @@
 var mongoose = require('mongoose');
 
 var OrderSchema=mongoose.Schema({
-    ProductId:{
-        type: mongoose.SchemaTypes.ObjectId,
-        required:true 
-    },
-    UserId:{
-        type: mongoose.SchemaTypes.ObjectId,
+
+    name:{
+        type:String,
         required:true
     },
-    Quantity:
-    {
-        type:Number,
-        required:true
+    email: {
+        type: String,
+        required: true,
+       
     },
-    initialDate:
+    address:
     {
          type:String,
          required:true
     },
-    deliveryDate:{
+    state:{
         type:String,
+        required:true
+    },
+    zip:{
+        type:Number,
+        required:true
+    },
+    phoneNumber:{
+        type:Number,
         required:true
     }
 });

@@ -1,0 +1,97 @@
+<br>
+<br>
+<br>
+
+<h2> Checkout Form</h2>
+<div class="bigContainer">
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form   #userForm="ngForm" (ngSubmit)="addOrders()">
+        <flash-messages></flash-messages>
+        <div class="row">
+          
+          <div class="col-50">
+            <h3>Billing Address</h3><br>
+            <div class="form-group">
+            <label><i class="fa fa-name"></i> Full Name</label>
+            <input type="text" required #Name="ngModel" [class.is-invalid]="Name.invalid && Name.touched" class="form-control" name="Name" [(ngModel)]="name" placeholder="John M. Doe">
+            <small [class.d-none]="Name.valid || Name.untouched">Full name Required</small> 
+            </div>
+
+            <div class="form-group">
+             <label><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" required #Email="ngModel" [class.is-invalid]="Email.invalid && Email.touched" class="form-control" name="Email" [(ngModel)]="email" placeholder="abb@example.com"  >
+            <small [class.d-none]="Email.valid || Email.untouched">Email Required</small>
+            </div>
+            
+            <div class="form-group">
+            <label ><i class="fa fa-address-card-o"></i>Address</label>
+            <input type="text" required #Address="ngModel" [class.is-invalid]="Address.invalid && Address.touched" class="form-control" name="Address" [(ngModel)]="address" placeholder="542 W. 15th Street"  >
+            <small [class.d-none]="Address.valid || Address.untouched">Address Required</small>
+            </div>
+        
+            <div class="form-group">
+              <label ><i class="fa fa-institution"></i>City</label>
+              <input type="text" required #City="ngModel" [class.is-invalid]="City.invalid && City.touched" class="form-control" name="City" [(ngModel)]="city" placeholder="Mumbai"  >
+              <small [class.d-none]="City.valid || City.untouched">City Required</small>
+              </div>
+
+              <div class="form-group">
+                <label ><i class="fa fa-institution"></i>PhoneNumber</label>
+                <input type="text" required #PhoneNumber="ngModel" [class.is-invalid]="PhoneNumber.invalid && PhoneNumber.touched" class="form-control" name="PhoneNumber" [(ngModel)]="phoneNumber" placeholder="8989898989"  >
+                <small [class.d-none]="PhoneNumber.valid || PhoneNumber.untouched">PhoneNumber Required</small>
+                </div>
+        
+
+            <div class="row">
+              <div class="col-50">
+          
+                <div class="form-group">
+                  <label >State</label>
+                  <input type="text" required #State="ngModel" [class.is-invalid]="State.invalid && State.touched" class="form-control" name="State" [(ngModel)]="state" placeholder="Mumbai"  >
+                  <small [class.d-none]="State.valid || State.untouched">State  Required</small>
+                  </div>
+                </div>
+
+
+              <div class="col-50">
+               
+                <div class="form-group">
+                  <label >Zip</label>
+                  <input type="text" required #Zip="ngModel" [class.is-invalid]="Zip.invalid && Zip.touched" class="form-control" name="Zip" [(ngModel)]="zip" placeholder="400094"  >
+                  <small [class.d-none]="Zip.valid || Zip.untouched">Zip Required</small>
+                  </div>
+                </div>
+
+            </div>
+          </div>
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <button class="btn btn-primary"  [disabled]="!userForm.valid" type="submit">Confirm</button>
+        <button type="button" class="btn" [disabled]="!userForm.valid" (click)="initPay()"  >Pay via razor pay</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-25">
+    
+    <div class="container">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart" ></i></span></h4>
+    
+
+     <div class="products">
+      <p><a href="http://localhost:4200/product/5fd6a9e64a0d7428eccca19e">Women's plain Top</a> <span class="price">{{800| currency:'INR'}}</span></p>
+  
+    
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>{{800| currency:'INR'}}</b></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<br>
+<br>

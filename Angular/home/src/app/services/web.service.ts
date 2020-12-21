@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,4 +21,8 @@ export class WebService {
    {
      return this._http.post(`${this.ROOT_URL}/${uri}`,payload);
    }
+
+   sendEmail(url:any, data:any) {
+    return this._http.post(url, data);
+  }
 }

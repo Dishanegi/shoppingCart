@@ -22,8 +22,10 @@
     "@google-pay/button-element": "^2.1.5",
     "angular2-flash-messages": "^3.0.1",
     "bootstrap": "^4.5.3",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "ngx-paypal": "^6.2.0",
+    "razorpay": "^2.0.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

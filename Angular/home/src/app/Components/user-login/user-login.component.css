@@ -1,10 +1,10 @@
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
-    background: #dfdbdb;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #e4e1df, #e6c8c8);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #f8f2ee, #eee0e0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-float:left;
-width:100%;
+    grid-gap:10px;
+    background-color: var(--primary);
+    background-image: url('https://www.intheblack.com/-/media/intheblack/allimages/magazine-2018/11-november/small-shopping-bags.jpg?rev=2ad3af44e054440598b93c6c3c442aa1');
+    background-size: cover;
+    min-height: 900px;
 padding : 50px 0;
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:500px; border-radius: 0 10px 10px 0; padding:0;}

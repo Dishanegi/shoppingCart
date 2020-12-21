@@ -1,1 +1,17 @@
-<p>header works!</p>
+
+
+<br>
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let product of productList">
+       <h2> {{product._id}}</h2>
+       <h2> {{product.title}}</h2>
+       <h2> {{product.slug}}</h2>
+       <h2> {{product.desc}}</h2>
+       <h2> {{product.category}}</h2>
+       <h2> {{product.price}}</h2>
+       <h2> {{product.image}}</h2>
+       <button type="button"  (click)="handleAddTOcart()">Add to cart</button>
+    </div>
+</div>
+ 

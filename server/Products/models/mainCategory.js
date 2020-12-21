@@ -4,8 +4,7 @@ var mongoose = require('mongoose');
 // Category Schema
 var mainCategorySchema = mongoose.Schema({
     title:{
-        type:String,
-        required:true
+        type:String
 
     },
     slug: {
@@ -14,4 +13,4 @@ var mainCategorySchema = mongoose.Schema({
     
 });
 
-var mainCategory = module.exports = mongoose.model('MainCategory', mainCategorySchema);
+var mainCategory = module.exports = mongoose.model('mainCategory', mainCategorySchema);

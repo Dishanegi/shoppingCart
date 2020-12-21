@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
 import { Router } from '@angular/router';
+import { FlashMessagesService} from 'angular2-flash-messages';
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class AdminLoginComponent implements OnInit {
   loginAdminData={};
   constructor(private _adminService:AdminService,
-    private _router:Router) { }
+    private _router:Router,
+    private flashMsg:FlashMessagesService) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +28,8 @@ loginAdmin()
       this._router.navigate(['/admin/admin-view']);
     },
     err =>{ console.log(err);
-    alert('Not Authorised Admin');
+      this.flashMsg.show('Either email is wrong or password', {cssClass:'alert-danger',timeout:3000});
+
     }
   )
 

@@ -1,87 +1,54 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { ProductsService } from 'src/app/services/products.service';
 import Cart from 'src/app/models/cart';
 import { ActivatedRoute, Router,Params } from '@angular/router';
 import {ICreateOrderRequest, IPayPalConfig} from 'ngx-paypal';
+import { ICustomWindow, WindowRef } from 'src/app/window-ref.service';
+import { FlashMessagesService} from 'angular2-flash-messages';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  providers: [WindowRef]
 })
 export class CartComponent implements OnInit {
-
+  
   carts : Cart[]=[];
   title:string;
   price:number;
   quantity:number;
 
   cartTotal:number=0;
-  constructor(private _productService : ProductsService, private _route:ActivatedRoute) { }
-  
-  public payPalConfig ?: IPayPalConfig;
+  constructor(private _productService : ProductsService, private _route:ActivatedRoute,private flashMsg:FlashMessagesService,
+    private zone:NgZone,private winRef:WindowRef) {
+      this._window=this.winRef.nativeWindow;
+     }
 
- 
-  private initConfig(): void {
-    this.payPalConfig = {
-      currency: 'INR',
-      clientId: 'AQ0XH-nc6ZkRL0KvIWIRodl7Bdhakc79H06NPFKcuosW9Yku4t0vTOK4CG4dRLudrwX4itTv8p7eVMOX', // add paypal clientId here
-      createOrderOnClient: (data:any) => <ICreateOrderRequest> {
-        intent: 'CAPTURE',
-        purchase_units: [{
-          amount: {
-            currency_code: 'INR',
-            value: '1600',
-            breakdown: {
-              item_total: {
-                currency_code: 'INR',
-                value: '1600'
-              }
-            }
-          },
-          items: [{
-            name: 'Disha',
-            quantity: '1',
-            category: 'DIGITAL_GOODS',
-            unit_amount: {
-              currency_code: 'INR',
-              value: '1600',
-            },
-          }]
-        }]
-      },
-      
-      advanced: {
-        commit: 'true'
-      },
-      style: {
-        label: 'paypal',
-        layout: 'vertical',
-        size: 'small',
-        color: 'gold',
-        shape: 'rect'
-      },
-      onApprove: (data, actions) => {
-        console.log('onApprove - transaction was approved, but not authorized', data, actions);
-        actions.order.get().then(details => {
-          console.log('onApprove - you can get full order details inside onApprove: ', details);
-        });
+     deleteProductsFromCart(id:any)
+     {
+       var carts=this.carts;
+       this._productService.deleteCart(id)
+       .subscribe(data=>
+         {
+           if(data.null==1)
+           {
+             for(var i=0; i< carts.length; i++)
+             {
+                if(carts[i]._id == id)
+                {
+                  carts.splice(i,1);
+                  //console.log(data);
+                 // this.flashMsg.show('One item deleted', {cssClass:'alert-success',timeout:3000});
 
-      },
-      onClientAuthorization: (data) => {
-        console.log('onClientAuthorization - you should probably inform your server about completed transaction at this point', data);
-      },
-      onCancel: (data, actions) => {
-        console.log('OnCancel', data, actions);
+                }
+             }
 
-      },
-      onError: err => {
-        console.log('OnError', err);
-      },
-      onClick: (data, actions) => {
-        console.log('onClick', data, actions);
-      }
-    };
-  }
+           }
+         });
+     }
+
+
+
 
 
   ngOnInit() {
@@ -89,8 +56,7 @@ export class CartComponent implements OnInit {
       {
         this.cartTotal = this.cartTotal + (cart.price*cart.quantity);
       });
-    this.initConfig();
-
+   
     this._route.params.subscribe((params:Params)=>
     {
 
@@ -103,7 +69,55 @@ export class CartComponent implements OnInit {
 
     
   }
+
+
+private _window:ICustomWindow;
+public rzp:any;
+
+  
+  public options:any = {
+        "key": "rzp_test_PfZHxnJjZiqKqr",
+        "amount": 50000,
+        "name": "Shopholic",
+        "description": "Order Details",
+      
+    
+        "prefill": {
+           "name":"Manny",
+           "email":"manny@m",
+        },
+        "notes": {
+          "address": ""},
+        "theme": {
+          "color": "#3880FF"
+        },
+        handler:this.paymentHandler.bind(this),
+        modal:{
+          ondismiss:(()=>{
+            this.zone.run(()=>
+            {
+              //add current page routing if payment fails
+            })
+
+          })
+        }
+      };
+  initPay():void{
+    this.rzp = new this.winRef.nativeWindow['Razorpay'](this.options);
+    this.rzp.open();
+
+  } 
+  
+  paymentHandler(res:any)
+  {
+    this.zone.run(()=>
+    {
+      //add api call here
+    })
+  }
+  
 }
+
 
 
 

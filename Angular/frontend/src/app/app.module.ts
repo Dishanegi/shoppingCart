@@ -10,6 +10,8 @@ import { AddCategoriesComponent } from './add-categories/add-categories.componen
 import { CategoriestableComponent } from './categoriestable/categoriestable.component';
 import { AddMainCategoryComponent } from './add-main-category/add-main-category.component';
 import { MainCategoryTableComponent } from './main-category-table/main-category-table.component';
+import { SaleComponent } from './sale/sale.component';
+import { AddSaleComponent } from './add-sale/add-sale.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MainCategoryTableComponent } from './main-category-table/main-category-
     AddCategoriesComponent,
     CategoriestableComponent,
     AddMainCategoryComponent,
-    MainCategoryTableComponent
+    MainCategoryTableComponent,
+    SaleComponent,
+    AddSaleComponent
   ],
   imports: [
     BrowserModule,

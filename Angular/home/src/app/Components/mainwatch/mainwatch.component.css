@@ -1,4 +1,10 @@
 /* Underline Effect*/
+
+
+.navbar-default
+{
+background-color: rgb(255, 187, 0);
+}
 .nav-item {
     position: relative;
   }
@@ -37,15 +43,43 @@
   .dropdown-item:hover, .dropdown-item:focus {
       color: #ffffff;
       text-decoration: none;
-      background-color: #dd4343;
+      background-color: #ddcdcdad;
   }
   
   .dropdown-menu {
     border: 0px;
   }
+  .navbar-nav > li{
+    padding-left:30px;
+    padding-right:20px;
+  }
   
-  /* General Styles*/
+
   
+
+
+/* Style the button and place it in the middle of the container/image */
+.but1container .btn {
+    position: absolute;
+    top: 67.4%;
+    left: 49.5%;
+   
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: rgb(180, 92, 92);
+    font-size: 16px;
+    padding: 20px 110px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+   
+  }
+
+
+
+
 
 
 
@@ -53,30 +87,79 @@
     display: grid;
     grid-gap:20px;
     background-color: var(--primary);
-    background-image: url('https://res.cloudinary.com/entd/image/fetch/w_1460,q_auto:good,f_auto/https://assets.live.kmo.zone/entd/teaser-images/a6e93d28-cdcc-435d-925c-df889837c6a4/dcd21decdb9ced22d2da12a7928470d76efdcbce4547fa7c9b95e31463969aa9.jpeg');
+    background-image: url('https://www.lifeisgood.com/dw/image/v2/AAHN_PRD/on/demandware.static/-/Sites-LIG2015-Library/default/dw51d977a0/clp_sale/2-SC_11.1_Holiday20_SaleCLP-desk_40offSale.jpg');
     background-size: cover;
-    min-height: 300px;
+    min-height: 350px;
     background-position: center;
    
 }
 
 
 
+.center2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 85vh;
+    width: 202vh;
+  }
+
+
+
+
  
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   margin-top: 20px;
+    height: 80vh;
+    width: 80vh;
+  }
+
 
 .carousel-item {
-    height: 56vh;
-    min-height: 300px;
+    height: 85vh;
+    min-height: 400px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
   }
+
   .carousel-caption {
     bottom: 270px;
   }
+  .container {
+    position: relative;
+    width: 50%;
+  }
   
+  /* Make the image responsive */
+  .container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Style the button and place it in the middle of the container/image */
+  .butcontainer .btn {
+    position: absolute;
+    top: 87%;
+    left: 53.5%;
+   
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color:transparent;
+    color: rgb(180, 92, 92);
+    font-size: 16px;
+    padding: 50px 310px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+   
+  }
   .carousel-caption h5 {
     font-size: 45px;
     text-transform: uppercase;

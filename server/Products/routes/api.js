@@ -22,6 +22,14 @@ router.get('/mainCategory',function(req,res)
        }
    });
 });
+
+
+
+
+
+
+
+
 //get with respect title
 router.get('/mainCategory/:title',function(req,res)
 {
@@ -41,9 +49,9 @@ router.get('/mainCategory/:title',function(req,res)
 //post the main categories
 router.post('/mainCategory',function(req,res)
 {
-   mainCategory.create(req.body).then(function(maincategories)
+   mainCategory.create(req.body).then(function(maincategory)
    {
-       res.send(maincategories);
+       res.send(maincategory);
    });
 });
 
@@ -59,7 +67,7 @@ router.delete('/mainCategory/:id',function(req,res)
 //edit
 router.patch('/mainCategory/:id' ,(req,res)=>
 {
-MainCategory.findOneAndUpdate({'_id':req.params.id},{ $set:req.body })
+mainCategory.findOneAndUpdate({'_id':req.params.id},{ $set:req.body })
 .then((maincategory)=>{
     if(maincategory)
     {
@@ -152,6 +160,26 @@ Category.findOneAndUpdate({'_id':req.params.id},{ $set:req.body })
      });
 
 });
+
+
+router.delete('/categories/:id',function(req,res)
+{
+    Category.findByIdAndRemove(req.params.id).then(function(category)
+    {
+        res.send(category);
+    });
+})
+
+
+
+
+
+
+
+
+
+
+
 //Products
 const Product=require('../models/product');
 
@@ -277,9 +305,9 @@ router.delete('/product/:id',function(req,res)
 //post items in a cart
 const Cart=require('../models/cart');
 
-router.post('/Cart/:UserId/:ProductId/:title/:price',(req,res)=>
+router.post('/Cart/:userId/:productId/:title/:price',(req,res)=>
 {
-new Cart({'userId':req.params.UserId,'productId':req.params.ProductId,'title':req.params.title,'price':req.params.price,'quantity':req.body.quantity})
+new Cart({'userId':req.params.userId,'productId':req.params.productId,'title':req.params.title,'price':req.params.price,'quantity':req.body.quantity})
 .save()
 .then((cart)=> res.send(cart))
 .catch((error)=> console.log(error));
@@ -287,11 +315,18 @@ new Cart({'userId':req.params.UserId,'productId':req.params.ProductId,'title':re
 
 router.post('/Cart',function(req,res)
 {
-    Cart.create(req.body).then(function(list)
-    {
-        res.send(list);
-    });
+   Cart.create(req.body).then(function(product)
+   {
+       res.json(product);
+   });
 });
+
+
+
+
+
+
+
 
 router.get('/Cart',function(req,res)
 {
@@ -357,6 +392,15 @@ router.delete('/Cart/:id',function(req,res)
          });
 });  
 
+
+
+
+
+
+
+
+
+
 router.put('/Cart/:id',function(req,res)
 {
    console.log("updating specific items");
@@ -366,6 +410,35 @@ router.put('/Cart/:id',function(req,res)
         res.send(product);
     });
    });
+
+
+
+
+
+
+
+   //Sale Products
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //maincategorywise categories
 router.get('/mainCategory/:title/categories',(req,res)=>
 {
@@ -381,5 +454,16 @@ Product.find({category:req.params.title})
 .then((products)=> res.send(products))
 .catch((error)=>console.log(error));
 });
+
+/**router.get('/categories/:title/sale',(req,res)=>
+{
+Sale.find({category:req.params.title})
+.then((products)=> res.send(products))
+.catch((error)=>console.log(error));
+});
+**/
+
+
+
 
 module.exports = router;

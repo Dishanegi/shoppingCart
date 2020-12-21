@@ -23,6 +23,11 @@ getProducts()
 {
   return this._webService.get('product');
 }
+getSpecificProductDetails(id:any)
+
+{
+ return this._webService.get(`product/${id}`);
+}
 
 getmainCategorywiseCategories(title:string)
 {
@@ -36,7 +41,7 @@ return this._webService.get(`categories/${title}/product`);
 postCart(userId:string, productId:string ,title:string, price:number, quantity:number)
 {
   //console.log(this.uid);
-  return this._webService.post(`Cart/${userId}/${productId}/${title}/${price}`,quantity);
+  return this._webService.post(`Cart/${userId}/${productId}/${title}/${price}`,{quantity});
   
 }
 getCart(userId:any)

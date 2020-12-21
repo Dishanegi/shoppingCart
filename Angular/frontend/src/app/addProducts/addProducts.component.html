@@ -1,8 +1,19 @@
+<div class="showcase">
+  <!-- Page content -->
+  <div id="page-content-wrapper">
+    <!-- Keep all page content within the page-content inset div! -->
+    <div class="page-content inset">
+      <div class="row">
+        <br>
+        <br>
 
 
 <div class="container">
   <h1>Products</h1>
+  <div class="row1">
     <form #userForm="ngForm" (ngSubmit)="addProduct()"  >
+      <div class="inner">
+        <h2>Add Products</h2><br>
         <div class="form-group">
             <label>Title</label>
             <input type="text" required #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control" name="name" [(ngModel)]="title"  >
@@ -41,12 +52,21 @@
           <small [class.d-none]="Image2.valid || Image2.untouched">image Required</small>
           </div>
     <button class="btn btn-primary" [disabled]="!userForm.valid" type="submit">Submit</button>
-    </form>
+      </div>
+  </form>
+  </div>
+
 </div>
 <br>
 
 <br><br><br><br>
 <br><br><br><br><br><br><br><br><br>
+
+
+</div>
+</div>
+</div>
+</div>
 <!--<div class="container">
     <div *ngFor="let product of products">
         <div class="col-md-3">

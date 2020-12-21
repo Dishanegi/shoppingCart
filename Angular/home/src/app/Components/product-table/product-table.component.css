@@ -2,19 +2,23 @@
 .row{
     margin-left:0px;
     margin-right:0px;
+    margin-top: 0px;
+
+ 
 }
 
 #wrapper {
-    padding-left: 70px;
+    padding-left: 50px;
     transition: all .4s ease 0s;
     height: 100%
 }
 
 #sidebar-wrapper {
-    margin-left: -150px;
-    left: 70px;
-    width: 150px;
-    background: #222;
+    margin-left: -250px;
+    margin-top: 5px;
+    left: 250px;
+    width: 300px;
+    background: #f8c930;
     position: fixed;
     height: 100%;
     z-index: 10000;
@@ -24,22 +28,24 @@
 .sidebar-nav {
     display: block;
     float: left;
-    width: 150px;
+    width: 250px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 #page-content-wrapper {
-    padding-left: 0;
-    margin-left: 0;
+    padding-left: 50px;
+    margin-left: 250px;
     width: 100%;
     height: auto;
+    align-items: center;
 }
 #wrapper.active {
     padding-left: 150px;
 }
 #wrapper.active #sidebar-wrapper {
     left: 150px;
+    align-items: center;
 }
 
 #page-content-wrapper {
@@ -47,14 +53,14 @@
 }
 
 #sidebar_menu li a, .sidebar-nav li a {
-    color: #999;
+    color: rgb(0, 0, 0);
     display: block;
     float: left;
     text-decoration: none;
-    width: 150px;
-    background: #252525;
-    border-top: 1px solid #373737;
-    border-bottom: 1px solid #1A1A1A;
+    width: 300px;
+    background:  #f8c930;
+    border-top: 1px solid #f8c930;
+    border-bottom: 1px solid #ebdc0e;
     -webkit-transition: background .5s;
     -moz-transition: background .5s;
     -o-transition: background .5s;
@@ -63,7 +69,7 @@
 }
 .sidebar_name {
     padding-top: 25px;
-    color: #fff;
+    color: rgb(70, 68, 62);
     opacity: .7;
 }
 
@@ -73,14 +79,15 @@
 }
 
 .sidebar-nav li a {
-  color: #999999;
+  color: #413b3b;
   display: block;
   text-decoration: none;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .sidebar-nav li a:hover {
-  color: #fff;
-  background: rgba(255,255,255,0.2);
+  color: rgb(255, 255, 255);
+  background: rgba(230, 22, 22, 0.2);
   text-decoration: none;
 }
 
@@ -92,15 +99,15 @@
 .sidebar-nav > .sidebar-brand {
   height: 65px;
   line-height: 60px;
-  font-size: 18px;
+  font-size: 35px;
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999999;
+  color: #754949;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
+  color: rgb(216, 188, 27);
   background: none;
 }
 
@@ -125,6 +132,7 @@
   margin: 0;
   margin-left: 20px;
   line-height: 65px;
+  
   display: inline-block;
 }
 
@@ -171,7 +179,7 @@
 
 .carousel-item {
   height: 85vh;
-  min-height: 300px;
+  min-height: 400px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
