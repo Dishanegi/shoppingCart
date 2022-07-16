@@ -50,7 +50,7 @@ let mailOptions={
     html:`<h1> Hi ${user.name}</h1><br>
     <h4>You will recive your order within 7 days and it would be delivered to ${user.address}</h4><br>
     <h5>We hope you like our services. Have a good day</h5>`
-}
+};
 
 //send mail with defined transport object
 let info=await transporter.sendMail(mailOptions);
